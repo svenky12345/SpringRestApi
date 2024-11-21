@@ -1,14 +1,19 @@
 package com.springrest.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
 	
-	private long Id;
+	@Id
+	private long id;
 	private String title;
 	private String description;
 	
 	public Course(long id, String title, String description) {
 		super();
-		Id = id;
+		this.id = id;
 		this.title = title;
 		this.description = description;
 	}
@@ -19,11 +24,11 @@ public class Course {
 	}
 	
 	public long getId() {
-		return Id;
+		return id;
 	}
 	
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 	
 	public String getTitle() {
@@ -44,7 +49,7 @@ public class Course {
 	
 	@Override
 	public String toString() {
-		return "Course [Id=" + Id + ", title=" + title + ", description=" + description + "]";
+		return "Course [Id=" + id + ", title=" + title + ", description=" + description + "]";
 	}
 
 }
